@@ -1,0 +1,375 @@
+
+/* IPL-STYLE LIVE SCOREBOARD */
+
+.scoreboard {
+  margin-top: 28px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #192d23;
+  border: 1px solid #395442;
+  color: #fff;
+}
+
+.score-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.score-live {
+  color: #ff6868;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.score-top h2 {
+  margin: 10px 0 5px;
+  font-size: 23px;
+}
+
+.score-top p {
+  margin: 0;
+  color: #a8bdad;
+  font-size: 12px;
+}
+
+.score-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.score-main strong {
+  font-size: clamp(32px, 5vw, 48px);
+  color: #fff;
+}
+
+.score-main span {
+  color: #b5c9ba;
+  font-size: 13px;
+}
+
+.score-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.score-stats div {
+  padding: 15px;
+  border-radius: 9px;
+  background: #243c2e;
+}
+
+.score-stats small {
+  display: block;
+  color: #a8bdad;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.score-stats strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 20px;
+}
+
+.score-divider {
+  height: 1px;
+  background: #45614d;
+  margin: 22px 0;
+}
+
+.score-columns {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 25px;
+}
+
+.score-columns h3,
+.last-balls h3 {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: #f5b942;
+  letter-spacing: 1px;
+}
+
+.score-table-heading,
+.score-table-row {
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) repeat(4, 28px);
+  gap: 5px;
+  align-items: center;
+  padding: 10px 5px;
+  font-size: 11px;
+}
+
+.score-table-heading {
+  color: #a8bdad;
+  border-bottom: 1px solid #45614d;
+}
+
+.score-table-row {
+  color: #fff;
+  border-bottom: 1px solid #304a38;
+}
+
+.score-columns > div:last-child .score-table-heading,
+.score-columns > div:last-child .score-table-row {
+  grid-template-columns: minmax(75px, 1fr) repeat(3, 30px);
+}
+
+.last-balls {
+  margin-top: 25px;
+}
+
+.ball-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.ball {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #35513d;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ball.boundary {
+  background: #2563a9;
+}
+
+.ball.wicket {
+  background: #dc4545;
+}
+
+.no-balls {
+  color: #a8bdad;
+  font-size: 12px;
+}
+
+/* SCORER PANEL */
+
+.scorer-panel {
+  margin-top: 25px;
+  padding: 25px;
+  background: #19241c;
+  border: 1px solid #304033;
+  border-radius: 15px;
+}
+
+.scorer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.scorer-heading h2 {
+  margin: 8px 0 0;
+  font-size: 23px;
+}
+
+.admin-tag {
+  padding: 8px 13px;
+  border-radius: 20px;
+  color: #fbbf24;
+  border: 1px solid #80621f;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.scorer-match-settings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.scorer-match-settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #bdcbbf;
+  font-size: 12px;
+}
+
+.scorer-panel input,
+.scorer-panel select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #435347;
+  border-radius: 7px;
+  outline: none;
+  background: #101713;
+  color: #fff;
+}
+
+.scorer-panel input:focus,
+.scorer-panel select:focus {
+  border-color: #f59e0b;
+}
+
+.scorer-current {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 9px;
+  background: #243c2e;
+}
+
+.scorer-current span {
+  color: #fbbf24;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.scorer-current strong {
+  font-size: 14px;
+}
+
+.scorer-current small {
+  color: #a8bdad;
+}
+
+.control-title {
+  margin: 25px 0 12px;
+  color: #bdcbbf;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.scoring-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.scoring-buttons button,
+.player-management button,
+.scorer-actions button {
+  min-height: 47px;
+  border: 0;
+  border-radius: 8px;
+  background: #f59e0b;
+  color: #1b2119;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.scoring-buttons button:hover,
+.player-management button:hover,
+.scorer-actions button:hover {
+  background: #fbbf24;
+}
+
+.scoring-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.extra-buttons {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.extra-buttons button {
+  padding: 8px;
+  font-size: 12px;
+}
+
+.scoring-buttons .wicket-button {
+  background: #dc4545;
+  color: white;
+}
+
+.scoring-buttons .wicket-button:hover {
+  background: #f05252;
+}
+
+.player-management {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.player-management h3 {
+  font-size: 11px;
+  color: #bdcbbf;
+  letter-spacing: 1px;
+}
+
+.player-management button {
+  width: 100%;
+  margin-top: 9px;
+}
+
+.scorer-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.scorer-actions button {
+  flex: 1;
+}
+
+.scorer-actions .reset-button {
+  background: #35453a;
+  color: white;
+}
+
+.match-message {
+  color: #9bd6a3;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  .scoreboard,
+  .scorer-panel {
+    padding: 16px;
+  }
+
+  .score-top {
+    align-items: flex-start;
+  }
+
+  .score-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .scorer-match-settings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scoring-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .extra-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .player-management {
+    grid-template-columns: 1fr;
+  }
+
+  .score-table-heading,
+  .score-table-row {
+    font-size: 10px;
+  }
+}

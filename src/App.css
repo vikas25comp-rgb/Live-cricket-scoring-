@@ -1,0 +1,2491 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #edf2fa;
+  background: #080f1d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #080f1d;
+  --surface: #111d30;
+  --surface-light: #192a42;
+  --surface-dark: #0c1728;
+  --border: #293b55;
+  --text: #edf2fa;
+  --muted: #91a2ba;
+  --orange: #ff8a25;
+  --orange-light: #ffad58;
+  --green: #21c997;
+  --red: #ed515b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text);
+  background: var(--bg);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+input,
+select {
+  color-scheme: dark;
+}
+
+/* MAIN WEBSITE */
+
+.website {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 0%, #1b3454 0%, transparent 35%),
+    linear-gradient(180deg, #080f1d, #0b1423 60%, #080f1d);
+}
+
+.website main {
+  width: min(1450px, 92%);
+  margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 5%;
+  background: rgba(8, 16, 30, 0.96);
+  border-bottom: 1px solid #293b55;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 5px 25px #00000035;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #ffad58, #ff7919);
+  border-radius: 13px;
+  font-size: 24px;
+  box-shadow: 0 5px 18px #ff8a2535;
+}
+
+.brand h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.brand h2 span {
+  color: var(--orange);
+}
+
+.brand small {
+  display: block;
+  margin-top: 4px;
+  color: #8fa2bd;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  color: #f0f5fc;
+  background: #14243a;
+  border: 1px solid #334963;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  background: #ff454f;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff454f;
+  animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* WELCOME HERO */
+
+.welcome {
+  position: relative;
+  padding: 65px 20px 45px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.welcome h1 {
+  margin: 16px 0;
+  color: #ffffff;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  letter-spacing: -2.5px;
+  line-height: 1.12;
+}
+
+.welcome h1 span {
+  color: var(--orange);
+}
+
+.welcome p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #a0b0c6;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* LIVE BROADCAST */
+
+.stream-section {
+  margin-bottom: 28px;
+  padding: 24px;
+  background: linear-gradient(145deg, #14243a, #0e192b);
+  border: 1px solid #30445e;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px #00000030;
+}
+
+.stream-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.live-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #ff8c8c;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+}
+
+.stream-heading h2 {
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.public-tag {
+  padding: 8px 13px;
+  color: #ffc17f;
+  background: #392819;
+  border: 1px solid #79502b;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 300px;
+  overflow: hidden;
+  background: #02060d;
+  border: 1px solid #405775;
+  border-radius: 13px;
+  box-shadow: 0 15px 40px #00000060;
+}
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #02060d;
+}
+
+/* LIVE SCOREBOARD */
+
+.scoreboard {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 28px;
+  padding: 30px;
+  background:
+    radial-gradient(circle at 90% 0%, #ffffff12, transparent 32%),
+    linear-gradient(125deg, #1a3556, #11243e 60%, #101c31);
+  border: 1px solid #3c587b;
+  border-radius: 19px;
+  box-shadow: 0 15px 40px #00000040;
+}
+
+.score-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.score-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  color: #ffd6d6;
+  background: #612a34;
+  border: 1px solid #a64750;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.score-top h2 {
+  margin: 15px 0 5px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.score-top p {
+  margin: 0;
+  color: #a8bbd3;
+  font-size: 13px;
+}
+
+.score-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.score-main strong {
+  color: #ffffff;
+  font-size: clamp(48px, 8vw, 78px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-main span {
+  color: #b8c9df;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.score-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.score-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 17px;
+  background: #ffffff0b;
+  border: 1px solid #ffffff1a;
+  border-radius: 11px;
+}
+
+.score-stats small {
+  color: #a9bfd9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.score-stats strong {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-divider {
+  height: 1px;
+  margin: 25px 0;
+  background: #ffffff20;
+}
+
+.score-columns {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+.score-columns h3,
+.last-balls h3 {
+  margin: 0 0 14px;
+  color: #ffb36b;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.score-table-heading,
+.score-table-row {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) repeat(4, 35px);
+  gap: 8px;
+  align-items: center;
+  padding: 12px 9px;
+}
+
+.score-columns > div:nth-child(2) .score-table-heading,
+.score-columns > div:nth-child(2) .score-table-row {
+  grid-template-columns: minmax(90px, 1fr) repeat(3, 35px);
+}
+
+.score-table-heading {
+  color: #90a6c1;
+  background: #ffffff09;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.score-table-row {
+  color: #e8eef8;
+  border-bottom: 1px solid #ffffff13;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.score-table-row span:not(:first-child) {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-table-row span:first-child {
+  overflow-wrap: anywhere;
+}
+
+.last-balls {
+  margin-top: 25px;
+}
+
+.ball-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+.ball {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #eaf1fb;
+  background: #253d5b;
+  border: 1px solid #4a6688;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.ball.boundary {
+  color: #211304;
+  background: #ff9b3d;
+  border-color: #ffb45e;
+}
+
+.ball.wicket {
+  color: #ffffff;
+  background: #bd3444;
+  border-color: #f05a67;
+}
+
+.no-balls {
+  color: #91a5bf;
+  font-size: 12px;
+}
+
+/* SCORER CONTROL PANEL */
+
+.scorer-panel {
+  margin-bottom: 28px;
+  padding: 28px;
+  background: linear-gradient(145deg, #142238, #0e1a2b);
+  border: 1px solid #30445e;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #00000030;
+}
+
+.scorer-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.scorer-heading h2 {
+  margin: 9px 0 0;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 850;
+}
+
+.admin-tag {
+  padding: 8px 14px;
+  color: #ffd3a5;
+  background: #3b2a1c;
+  border: 1px solid #79512e;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* MATCH SETTINGS */
+
+.scorer-match-settings {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #0b1728;
+  border: 1px solid #2c405b;
+  border-radius: 12px;
+}
+
+.scorer-match-settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: #b9c9dc;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* INPUTS */
+
+.scorer-panel input,
+.scorer-panel select,
+.stream-link-form input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 11px 13px;
+  color: #f2f5fb;
+  background: #091423;
+  border: 1px solid #354b68;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.scorer-panel input:focus,
+.scorer-panel select:focus,
+.stream-link-form input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px #ff8a2520;
+}
+
+.scorer-panel input::placeholder,
+.stream-link-form input::placeholder {
+  color: #72849d;
+}
+
+/* CURRENT MATCH */
+
+.scorer-current {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 20px 0 27px;
+  padding: 19px;
+  background: linear-gradient(110deg, #1d3b54, #152c42);
+  border: 1px solid #3c607b;
+  border-left: 4px solid var(--orange);
+  border-radius: 11px;
+}
+
+.scorer-current span {
+  color: #ffb66e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.scorer-current strong {
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 850;
+}
+
+.scorer-current small {
+  color: #a9bfd4;
+  font-size: 12px;
+}
+
+/* SCORING HEADINGS */
+
+.control-title {
+  margin: 27px 0 13px;
+  color: #ffb36b;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+/* SCORING BUTTONS */
+
+.scoring-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.scoring-buttons button {
+  min-height: 61px;
+  padding: 10px;
+  color: #ffffff;
+  background: linear-gradient(145deg, #263e5c, #192c45);
+  border: 1px solid #456180;
+  border-radius: 11px;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 5px 13px #00000020;
+}
+
+.scoring-buttons button:hover:not(:disabled) {
+  color: #ffffff;
+  background: #365777;
+  border-color: #7897b9;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 18px #00000035;
+}
+
+.scoring-buttons button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.extra-buttons {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.extra-buttons button {
+  min-height: 52px;
+  font-size: 13px;
+}
+
+.extra-buttons .wicket-button {
+  color: #ffffff;
+  background: linear-gradient(135deg, #d84752, #a92b3c);
+  border-color: #f06470;
+}
+
+.extra-buttons .wicket-button:hover:not(:disabled) {
+  background: #ed4d5a;
+  border-color: #ff8990;
+}
+
+/* PLAYER MANAGEMENT */
+
+.player-management {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.player-management > div {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 11px;
+  min-width: 0;
+  padding: 18px;
+  background: #0b1728;
+  border: 1px solid #2c405b;
+  border-radius: 12px;
+}
+
+.player-management h3 {
+  margin: 0;
+  color: #eaf0f8;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.8px;
+}
+
+.player-management button,
+.scorer-actions button,
+.stream-link-form button {
+  min-height: 43px;
+  padding: 10px 17px;
+  color: #211305;
+  background: linear-gradient(135deg, #ffa94e, #ff811d);
+  border: 0;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.player-management button:hover,
+.scorer-actions button:hover,
+.stream-link-form button:hover {
+  background: linear-gradient(135deg, #ffc078, #ff9b42);
+  transform: translateY(-2px);
+}
+
+/* SCORER ACTIONS */
+
+.scorer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.scorer-actions button {
+  min-width: 140px;
+}
+
+.scorer-actions .reset-button {
+  color: #ffffff;
+  background: #a93240;
+  border: 1px solid #dc4c59;
+}
+
+.scorer-actions .reset-button:hover {
+  background: #d64552;
+}
+
+.match-message {
+  margin: 18px 0 0;
+  padding: 13px 15px;
+  color: #c8ffea;
+  background: #103d34;
+  border: 1px solid #237c66;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+/* FEATURES */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 28px;
+}
+
+.feature-card {
+  padding: 24px;
+  background: linear-gradient(145deg, #16263d, #101c2e);
+  border: 1px solid #2e425e;
+  border-radius: 14px;
+  transition: 0.2s ease;
+}
+
+.feature-card:hover {
+  border-color: #617b9d;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px #00000030;
+}
+
+.feature-card > span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: #293b54;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+.feature-card h3 {
+  margin: 17px 0 8px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #9cacc1;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* STREAM LINK ADMIN */
+
+.stream-link-admin {
+  margin-bottom: 35px;
+  padding: 27px;
+  background: linear-gradient(145deg, #17263c, #101b2d);
+  border: 1px solid #344a65;
+  border-radius: 16px;
+}
+
+.stream-link-admin-heading h2 {
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 850;
+}
+
+.stream-link-admin-heading p {
+  max-width: 700px;
+  color: #9eafc5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.stream-link-form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.stream-link-form label {
+  color: #c4d0e0;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.stream-link-form button {
+  align-self: flex-start;
+  min-width: 170px;
+  margin-top: 4px;
+}
+
+.stream-link-message {
+  margin-top: 15px;
+  padding: 12px 14px;
+  color: #caffea;
+  background: #103d34;
+  border: 1px solid #237c66;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.stream-link-note {
+  display: block;
+  margin-top: 18px;
+  color: #8294ad;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* FOOTER */
+
+.website footer {
+  padding: 35px 5%;
+  text-align: center;
+  background: #070e19;
+  border-top: 1px solid #273950;
+}
+
+.footer-brand {
+  justify-content: center;
+}
+
+.footer-brand .brand-icon {
+  width: 39px;
+  height: 39px;
+  font-size: 20px;
+}
+
+.footer-brand h2 {
+  font-size: 20px;
+}
+
+.website footer > p {
+  margin: 17px 0 10px;
+  color: #9aaac0;
+  font-size: 13px;
+}
+
+.website footer > small {
+  color: #657991;
+  font-size: 11px;
+}
+
+/* ACCESSIBILITY */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .scorer-match-settings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scoring-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .extra-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .video-container {
+    min-height: 260px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .navbar {
+    position: relative;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    padding: 15px 5%;
+  }
+
+  .brand h2 {
+    font-size: 21px;
+  }
+
+  .nav-status {
+    font-size: 10px;
+  }
+
+  .website main {
+    width: 94%;
+  }
+
+  .welcome {
+    padding: 43px 8px 30px;
+  }
+
+  .welcome h1 {
+    font-size: 39px;
+    letter-spacing: -1.5px;
+  }
+
+  .welcome p {
+    font-size: 13px;
+  }
+
+  .stream-section,
+  .scorer-panel,
+  .scoreboard,
+  .stream-link-admin {
+    padding: 17px;
+    border-radius: 13px;
+  }
+
+  .stream-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stream-heading h2 {
+    font-size: 19px;
+  }
+
+  .video-container {
+    min-height: 210px;
+  }
+
+  .score-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .score-main {
+    align-items: flex-start;
+  }
+
+  .score-main strong {
+    font-size: 59px;
+  }
+
+  .score-stats {
+    gap: 8px;
+  }
+
+  .score-stats > div {
+    padding: 11px;
+  }
+
+  .score-stats small {
+    font-size: 9px;
+  }
+
+  .score-stats strong {
+    font-size: 20px;
+  }
+
+  .score-columns {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .score-table-heading,
+  .score-table-row {
+    grid-template-columns: minmax(85px, 1fr) repeat(4, 30px);
+    gap: 5px;
+    padding: 11px 5px;
+  }
+
+  .score-columns > div:nth-child(2) .score-table-heading,
+  .score-columns > div:nth-child(2) .score-table-row {
+    grid-template-columns: minmax(85px, 1fr) repeat(3, 35px);
+  }
+
+  .score-table-row {
+    font-size: 11px;
+  }
+
+  .scorer-heading {
+    align-items: flex-start;
+  }
+
+  .scorer-heading h2 {
+    font-size: 21px;
+  }
+
+  .scorer-match-settings {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .scoring-buttons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .scoring-buttons button {
+    min-height: 55px;
+    font-size: 20px;
+  }
+
+  .extra-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .extra-buttons button {
+    font-size: 12px;
+  }
+
+  .player-management {
+    grid-template-columns: 1fr;
+  }
+
+  .scorer-actions {
+    flex-direction: column;
+  }
+
+  .scorer-actions button {
+    width: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 19px;
+  }
+
+  .stream-link-admin-heading h2 {
+    font-size: 20px;
+  }
+
+  .stream-link-form button {
+    width: 100%;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+  .welcome h1 {
+    font-size: 33px;
+  }
+
+  .score-main strong {
+    font-size: 51px;
+  }
+
+  .score-stats > div {
+    padding: 9px;
+  }
+
+  .scoring-buttons button {
+    min-height: 49px;
+    font-size: 18px;
+  }
+
+  .score-table-heading,
+  .score-table-row {
+    grid-template-columns: minmax(75px, 1fr) repeat(4, 25px);
+    font-size: 10px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* TELEVISION-STYLE LIVE SCORE GRAPHICS */
+.video-container .broadcast-overlay {
+  position: absolute;
+  z-index: 5;
+  right: 2.2%;
+  bottom: 2.5%;
+  left: 2.2%;
+  width: auto;
+  pointer-events: none;
+}
+
+.broadcast-overlay {
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  text-shadow: 0 1px 2px #000;
+}
+
+.broadcast-overlay-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 25px;
+  padding: 5px 12px;
+  background: linear-gradient(90deg, #09182eeF, #102c4aE8 72%, #e87520E8);
+  border-top: 2px solid #ff9b3d;
+  font-size: clamp(7px, 0.8vw, 12px);
+  font-weight: 900;
+  letter-spacing: 1.3px;
+}
+
+.broadcast-overlay-brand { color: #ffd3a6; }
+
+.broadcast-overlay-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+}
+
+.broadcast-overlay-live i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ff344b;
+  box-shadow: 0 0 9px #ff344b;
+  animation: livePulse 1.3s infinite;
+}
+
+.broadcast-overlay-live.is-complete i { background: #21c997; box-shadow: 0 0 8px #21c997; }
+
+.broadcast-overlay-main {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 13px;
+  background: linear-gradient(105deg, #071629F5, #102e4df2 68%, #152c45f2);
+  border-bottom: 1px solid #ffffff40;
+}
+
+.broadcast-overlay-team {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.broadcast-overlay-team > span {
+  grid-column: 1 / -1;
+  color: #ffc17e;
+  font-size: clamp(8px, 0.95vw, 14px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.broadcast-overlay-team > strong {
+  font-size: clamp(23px, 3vw, 44px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.broadcast-overlay-team > strong em {
+  color: #ffb66c;
+  font-size: 0.68em;
+  font-style: normal;
+}
+
+.broadcast-overlay-team > small {
+  align-self: end;
+  padding-bottom: 3px;
+  color: #c0d0e2;
+  font-size: clamp(7px, 0.75vw, 11px);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.broadcast-overlay-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(8px, 1.6vw, 25px);
+}
+
+.broadcast-overlay-metrics > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 30px;
+}
+
+.broadcast-overlay-metrics small,
+.broadcast-overlay-recent > small {
+  color: #9fb5ce;
+  font-size: clamp(6px, 0.65vw, 9px);
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.broadcast-overlay-metrics strong {
+  color: #fff;
+  font-size: clamp(12px, 1.45vw, 21px);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.broadcast-overlay-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 12px;
+  background: #050d19F2;
+  font-size: clamp(7px, 0.8vw, 12px);
+}
+
+.broadcast-overlay-batters {
+  display: flex;
+  flex: 1 1 auto;
+  gap: clamp(8px, 1.5vw, 22px);
+  min-width: 0;
+}
+
+.broadcast-overlay-batters span,
+.broadcast-overlay-bowler {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.broadcast-overlay-batters b,
+.broadcast-overlay-bowler b {
+  overflow: hidden;
+  color: #e9f1fb;
+  text-overflow: ellipsis;
+}
+
+.broadcast-overlay-batters strong,
+.broadcast-overlay-bowler strong {
+  color: #ffbd79;
+  font-variant-numeric: tabular-nums;
+}
+
+.broadcast-overlay-batters small { color: #a8bad0; font-size: 0.85em; }
+.broadcast-overlay-bowler { flex: 0 0 auto; padding-left: 10px; border-left: 1px solid #ffffff35; }
+
+.broadcast-overlay-recent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.broadcast-overlay-recent > small { margin-right: 3px; }
+.broadcast-overlay-recent i {
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  color: #fff;
+  background: #284866;
+  border-radius: 4px;
+  font-size: clamp(7px, 0.7vw, 10px);
+  font-style: normal;
+  font-weight: 900;
+}
+.broadcast-overlay-recent i.is-boundary { color: #241304; background: #ffad53; }
+.broadcast-overlay-recent i.is-wicket { background: #c73549; }
+
+.broadcast-overlay-empty {
+  padding: 12px 16px;
+  color: #fff;
+  background: #071629eF;
+  border-left: 4px solid #ff9b3d;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* OBS BROWSER-SOURCE MODE: transparent 16:9 canvas, graphics anchored near bottom */
+html:has(.broadcast-overlay-obs),
+body:has(.broadcast-overlay-obs),
+#root:has(.broadcast-overlay-obs) {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.broadcast-overlay-obs {
+  position: fixed;
+  right: 3.5%;
+  bottom: 5.5%;
+  left: 3.5%;
+  width: auto;
+  pointer-events: none;
+}
+
+.broadcast-overlay-obs .broadcast-overlay-topline { min-height: 42px; padding: 10px 22px; font-size: 15px; }
+.broadcast-overlay-obs .broadcast-overlay-live i { width: 10px; height: 10px; }
+.broadcast-overlay-obs .broadcast-overlay-main { min-height: 105px; padding: 14px 22px; }
+.broadcast-overlay-obs .broadcast-overlay-team > span { font-size: 18px; }
+.broadcast-overlay-obs .broadcast-overlay-team > strong { font-size: 58px; }
+.broadcast-overlay-obs .broadcast-overlay-team > small { font-size: 14px; }
+.broadcast-overlay-obs .broadcast-overlay-metrics { gap: 30px; }
+.broadcast-overlay-obs .broadcast-overlay-metrics small,
+.broadcast-overlay-obs .broadcast-overlay-recent > small { font-size: 12px; }
+.broadcast-overlay-obs .broadcast-overlay-metrics strong { font-size: 28px; }
+.broadcast-overlay-obs .broadcast-overlay-bottom { min-height: 48px; padding: 10px 22px; font-size: 15px; }
+.broadcast-overlay-obs .broadcast-overlay-recent i { min-width: 28px; height: 28px; font-size: 13px; }
+.broadcast-overlay-obs .broadcast-overlay-empty { padding: 18px 22px; font-size: 18px; }
+
+.obs-overlay-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 22px;
+  padding: 17px;
+  background: #0b1728;
+  border: 1px solid #2c405b;
+  border-radius: 10px;
+}
+.obs-overlay-instructions label {
+  color: #ffb36b;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.obs-overlay-instructions input {
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+  color: #dce8f7;
+  background: #07111f;
+  border: 1px solid #354b68;
+  border-radius: 7px;
+}
+.obs-overlay-instructions p {
+  margin: 0;
+  color: #91a2ba;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+  .video-container .broadcast-overlay { right: 2%; bottom: 2%; left: 2%; }
+  .broadcast-overlay-topline { padding: 4px 7px; }
+  .broadcast-overlay-main { gap: 5px; padding: 6px 7px; }
+  .broadcast-overlay-metrics { gap: 7px; }
+  .broadcast-overlay-bottom { gap: 6px; padding: 6px 7px; }
+  .broadcast-overlay-batters { gap: 6px; }
+  .broadcast-overlay-bowler { display: none; }
+  .broadcast-overlay-recent > small { display: none; }
+  .broadcast-overlay-recent i { min-width: 17px; height: 17px; padding: 0 2px; }
+}
+
+/* ============================================================
+   HARMONY SPORTS ASSOCIATION - PROFESSIONAL, ENERGETIC THEME
+   This is an additive override layer. All original CSS above is
+   intentionally retained so existing layouts and features remain.
+   ============================================================ */
+:root {
+  --bg: #071426;
+  --surface: #10243b;
+  --surface-light: #193653;
+  --surface-dark: #091a2d;
+  --border: #294765;
+  --text: #f4f8ff;
+  --muted: #a9bdd3;
+  --orange: #35b8ff;
+  --orange-light: #83d5ff;
+  --green: #a6ed58;
+  --red: #ff6478;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  color: var(--text);
+  background: #071426;
+}
+
+.website {
+  background:
+    radial-gradient(ellipse at 12% 5%, #16456a 0%, transparent 32%),
+    radial-gradient(ellipse at 92% 18%, #263e65 0%, transparent 30%),
+    linear-gradient(180deg, #071426 0%, #0a1c31 55%, #071426 100%);
+}
+
+.navbar {
+  background: rgba(6, 19, 35, 0.96);
+  border-bottom-color: #294765;
+  box-shadow: 0 8px 28px #02091470;
+}
+
+.brand-icon {
+  background: linear-gradient(135deg, #a6ed58, #35b8ff);
+  color: #071426;
+  box-shadow: 0 5px 20px #35b8ff35;
+}
+
+.brand h2 span,
+.eyebrow,
+.welcome h1 span {
+  color: #69caff;
+}
+
+.nav-status {
+  background: #132c46;
+  border-color: #355879;
+}
+
+.stream-section,
+.scorer-panel,
+.scoreboard,
+.feature-card,
+.stream-link-admin,
+.obs-overlay-instructions {
+  background: linear-gradient(145deg, #142d48, #0c2036);
+  border-color: #31516f;
+  box-shadow: 0 14px 34px #02091445;
+}
+
+.video-container {
+  border-color: #3c6588;
+  box-shadow: 0 12px 32px #02091470;
+}
+
+.score-live,
+.live-label {
+  color: #ff7887;
+}
+
+.score-main strong,
+.score-stats strong,
+.scorer-current strong {
+  color: #f6fbff;
+}
+
+.score-stats > div,
+.scorer-current,
+.scorer-match-settings,
+.player-management > div {
+  background: #102943;
+  border-color: #31516f;
+}
+
+.score-columns h3,
+.last-balls h3,
+.control-title,
+.player-management h3 {
+  color: #8bd6ff;
+}
+
+.score-table-heading {
+  color: #c0d8ed;
+  background: #193956;
+}
+
+.score-table-row {
+  border-color: #294765;
+}
+
+.ball.boundary,
+.broadcast-overlay-recent i.is-boundary {
+  color: #10220a;
+  background: #a6ed58;
+}
+
+.ball.wicket,
+.broadcast-overlay-recent i.is-wicket {
+  color: #fff;
+  background: #e94d68;
+}
+
+.scorer-panel input,
+.scorer-panel select,
+.stream-link-form input,
+.obs-overlay-instructions input {
+  color: #f4f8ff;
+  background: #081a2d;
+  border-color: #3a5c7b;
+}
+
+.scorer-panel input:focus,
+.scorer-panel select:focus,
+.stream-link-form input:focus,
+.obs-overlay-instructions input:focus {
+  border-color: #35b8ff;
+  outline: 2px solid #35b8ff35;
+}
+
+.scoring-buttons button,
+.extra-buttons button,
+.player-management button,
+.scorer-actions button,
+.stream-link-form button {
+  border-color: #3b6688;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.scoring-buttons button {
+  color: #082039;
+  background: linear-gradient(135deg, #8bdcff, #35b8ff);
+  box-shadow: 0 5px 14px #35b8ff20;
+}
+
+.scoring-buttons button:hover:not(:disabled),
+.extra-buttons button:hover:not(:disabled),
+.player-management button:hover:not(:disabled),
+.scorer-actions button:hover:not(:disabled),
+.stream-link-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 20px #02091455;
+}
+
+.extra-buttons .wicket-button,
+.scorer-actions .reset-button {
+  color: #fff;
+  background: linear-gradient(135deg, #ff7887, #d93658);
+  border-color: #ff8794;
+}
+
+.feature-card {
+  border-radius: 16px;
+}
+
+.feature-card:hover {
+  border-color: #62caff;
+  box-shadow: 0 12px 30px #35b8ff20;
+}
+
+.feature-card > span {
+  color: #a6ed58;
+}
+
+.admin-tag,
+.public-tag {
+  color: #dff4ff;
+  background: #17476a;
+  border-color: #3c82aa;
+}
+
+.match-message {
+  color: #e9f7ff;
+  background: #153b57;
+  border-color: #3c82aa;
+}
+
+.obs-overlay-instructions label {
+  color: #8bd6ff;
+}
+
+/* ADD RUNS AND SCORING CORRECTION SIDE-BY-SIDE */
+.scoring-workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 27px;
+}
+
+.scoring-workspace-card {
+  min-width: 0;
+  padding: 18px;
+  background: linear-gradient(145deg, #142d48, #0c2036);
+  border: 1px solid #31516f;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px #02091435;
+}
+
+.scoring-workspace-card .control-title {
+  margin-top: 0;
+}
+
+.scoring-workspace-card .scoring-buttons {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.scoring-workspace-card .extra-buttons {
+  grid-template-columns: 1fr;
+}
+
+.scoring-workspace-card .extra-buttons button {
+  min-height: 48px;
+  padding: 10px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 650px) {
+  .scoring-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   HARMONY SPORTS ASSOCIATION - BRIGHT, FRIENDLY STADIUM THEME
+   Additive overrides only: all original CSS above is preserved.
+   ========================================================== */
+:root {
+  color-scheme: light;
+  --bg: #f4f9ff;
+  --surface: #ffffff;
+  --surface-light: #edf6ff;
+  --surface-dark: #e4f0ff;
+  --border: #c9def5;
+  --text: #173253;
+  --muted: #58718e;
+  --orange: #ff8a00;
+  --orange-light: #ffb52e;
+  --green: #21b85a;
+  --red: #ef476f;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #173253;
+  background: #f4f9ff;
+}
+
+html, body {
+  background: #f4f9ff;
+  color: #173253;
+}
+
+body {
+  background-image: radial-gradient(circle at 8% 4%, #dff1ff 0, transparent 28%),
+                    radial-gradient(circle at 92% 12%, #fff0d7 0, transparent 25%);
+  background-attachment: fixed;
+}
+
+.website {
+  color: #173253;
+  background: transparent;
+}
+
+.navbar {
+  background: linear-gradient(105deg, #ffffff 0%, #eaf5ff 58%, #fff4df 100%);
+  border: 1px solid #c9def5;
+  box-shadow: 0 8px 24px #28527a14;
+}
+
+.brand h2, .welcome h1, .stream-heading h2, .scorer-heading h2,
+.score-top h2, .feature-card h3, .control-title, .player-management h3,
+.stream-link-admin-heading h2 {
+  color: #173253;
+}
+
+.brand h2 span, .welcome h1 span, .eyebrow {
+  color: #087bd3;
+}
+
+.brand small, .welcome p, .stream-link-admin-heading p,
+.feature-card p, .score-top p, .scorer-current small {
+  color: #58718e;
+}
+
+.stream-section, .scorer-panel, .features, .stream-link-admin,
+.scorer-match-settings, .player-management, .obs-overlay-instructions {
+  color: #173253;
+  background: #ffffff;
+  border: 1px solid #c9def5;
+  box-shadow: 0 10px 28px #28527a12;
+  border-radius: 18px;
+}
+
+.video-container {
+  border: 4px solid #ffffff;
+  box-shadow: 0 12px 30px #17436b24;
+}
+
+.scoreboard {
+  color: #ffffff;
+  background: linear-gradient(130deg, #087bd3 0%, #0759ad 55%, #073f83 100%);
+  border: 2px solid #58baff;
+  box-shadow: 0 14px 32px #087bd333;
+}
+
+.score-top, .score-main, .score-stats, .score-columns,
+.last-balls, .score-divider {
+  color: #ffffff;
+}
+
+.score-main strong, .score-stats strong {
+  color: #ffe08a;
+}
+
+.score-stats > div, .score-table-row, .score-table-heading {
+  border-color: #ffffff35;
+}
+
+.score-table-heading, .score-table-row span {
+  color: #ffffff;
+}
+
+.ball {
+  background: #eaf4ff;
+  color: #173253;
+  border: 1px solid #b8d8f5;
+}
+
+.ball.boundary {
+  background: #ffcf4a;
+  color: #553500;
+  border-color: #ffcf4a;
+}
+
+.ball.wicket {
+  background: #ff5573;
+  color: #ffffff;
+  border-color: #ff5573;
+}
+
+.scorer-panel, .scorer-match-settings, .stream-link-admin,
+.player-management, .obs-overlay-instructions {
+  background: #ffffff;
+}
+
+.scorer-heading, .scorer-current, .scoring-workspace-card,
+.feature-card, .stream-link-form {
+  color: #173253;
+  background: linear-gradient(145deg, #ffffff, #edf6ff);
+  border: 1px solid #c9def5;
+  box-shadow: 0 7px 20px #28527a12;
+}
+
+.scorer-current span, .scorer-current strong,
+.scorer-match-settings label, .stream-link-form label,
+.stream-link-admin label, .obs-overlay-instructions label {
+  color: #315577;
+}
+
+input, select, textarea,
+.stream-link-form input, .obs-overlay-instructions input {
+  color: #173253;
+  background: #f7fbff;
+  border: 1px solid #a9c9e9;
+}
+
+input::placeholder, textarea::placeholder,
+.stream-link-form input::placeholder {
+  color: #7990a9;
+}
+
+input:focus, select:focus, textarea:focus,
+.stream-link-form input:focus {
+  outline: 3px solid #168bd033;
+  border-color: #168bd0;
+}
+
+button, .scoring-buttons button, .extra-buttons button,
+.stream-link-form button, .scorer-actions button {
+  color: #ffffff;
+  background: linear-gradient(135deg, #168bd0, #0868bb);
+  border: 1px solid #0876c9;
+  box-shadow: 0 4px 10px #087bd326;
+  font-weight: 800;
+}
+
+button:hover:not(:disabled), .scoring-buttons button:hover:not(:disabled),
+.extra-buttons button:hover:not(:disabled),
+.stream-link-form button:hover:not(:disabled),
+.scorer-actions button:hover:not(:disabled) {
+  filter: brightness(1.08) saturate(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px #087bd333;
+}
+
+.scoring-buttons button:nth-child(4n + 1) {
+  background: linear-gradient(135deg, #ffbd35, #ff9100);
+  border-color: #f29a00;
+  color: #553300;
+}
+
+.scoring-buttons button:nth-child(4n + 2) {
+  background: linear-gradient(135deg, #31c96b, #159b4b);
+  border-color: #159b4b;
+}
+
+.scoring-buttons button:nth-child(4n + 3) {
+  background: linear-gradient(135deg, #22b8cf, #087eaa);
+  border-color: #087eaa;
+}
+
+.extra-buttons .wicket-button, .scorer-actions .reset-button {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff637b, #e52e55);
+  border-color: #e52e55;
+}
+
+.admin-tag, .public-tag, .live-label, .nav-status {
+  color: #075b9d;
+  background: #dff1ff;
+  border: 1px solid #a9d8ff;
+}
+
+.status-dot, .score-live i {
+  background: #22c968;
+  box-shadow: 0 0 0 4px #22c96825;
+}
+
+.feature-card:hover {
+  border-color: #168bd0;
+  box-shadow: 0 12px 26px #168bd025;
+  transform: translateY(-4px);
+}
+
+.match-message {
+  color: #174b2c;
+  background: #e4f9eb;
+  border: 1px solid #9ce0b3;
+}
+
+.obs-overlay-instructions p {
+  color: #58718e;
+}
+
+@media (max-width: 650px) {
+  body { background-attachment: scroll; }
+  .navbar { box-shadow: 0 4px 14px #28527a12; }
+}
+
+/* =========================================================
+   BRIGHT LIGHT THEME OVERRIDES
+   Appended intentionally: keeps every original rule above.
+   ========================================================= */
+:root {
+  color-scheme: light !important;
+  --bg: #f2f8ff !important;
+  --text: #17324f !important;
+  --muted: #526b86 !important;
+  --orange: #f59e0b !important;
+}
+
+html, body, #root, .website {
+  background: #f2f8ff !important;
+  color: #17324f !important;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 8% 4%, #d8efff 0, transparent 28%),
+    radial-gradient(circle at 94% 12%, #fff0c2 0, transparent 24%),
+    linear-gradient(180deg, #f7fbff 0%, #edf6ff 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Main website sections and every common content panel */
+.website, .welcome, .features, .feature-card,
+.scoreboard, .score-main, .score-top, .score-stats,
+.score-columns, .score-table-heading, .score-table-row,
+.scorer-panel, .scorer-heading, .scorer-current,
+.scorer-match-settings, .player-management,
+.scoring-workspace-card, .stream-section,
+.stream-link-admin, .stream-link-admin-heading,
+.stream-link-form, .stream-link-message, .stream-link-note,
+.obs-overlay-instructions, .match-message,
+.ball-list, .last-balls, .score-divider {
+  background: #ffffff !important;
+  color: #17324f !important;
+  border-color: #c9def2 !important;
+  box-shadow: 0 8px 24px rgba(37, 91, 143, 0.09) !important;
+}
+
+.navbar {
+  background: linear-gradient(100deg, #ffffff 0%, #e8f5ff 100%) !important;
+  color: #17324f !important;
+  border: 1px solid #c9e2f8 !important;
+  box-shadow: 0 5px 20px rgba(37, 91, 143, 0.12) !important;
+}
+
+/* Force readable text in panels, including nested headings and labels */
+.website, .website p, .website span, .website label,
+.website strong, .website small, .website li,
+.welcome h1, .welcome h2, .welcome p,
+.features h2, .feature-card h3, .feature-card p,
+.scoreboard h1, .scoreboard h2, .scoreboard h3,
+.score-main, .score-main *, .score-top, .score-top *,
+.score-stats, .score-stats *, .score-columns, .score-columns *,
+.score-table-heading, .score-table-row,
+.scorer-panel, .scorer-panel *, .scorer-match-settings *,
+.player-management, .player-management *,
+.scoring-workspace-card, .scoring-workspace-card *,
+.stream-section, .stream-section *, .stream-link-admin *,
+.obs-overlay-instructions, .obs-overlay-instructions * {
+  color: #17324f !important;
+}
+
+.website .muted, .website .subtext, .website .description,
+.website .help-text, .website small, .obs-overlay-instructions p {
+  color: #526b86 !important;
+}
+
+/* Colourful, high-contrast headings and section labels */
+.control-title, .scorer-heading, .stream-heading,
+.stream-link-admin-heading, .score-table-heading,
+.features > h2, .welcome h1 {
+  color: #075b9d !important;
+  text-shadow: none !important;
+}
+
+/* Inputs and dropdowns: white surfaces, dark readable text */
+input, select, textarea,
+.stream-link-form input, .stream-link-form select,
+.scorer-match-settings input, .scorer-match-settings select,
+.player-management input, .player-management select {
+  background: #ffffff !important;
+  color: #17324f !important;
+  border: 1px solid #a9c9e6 !important;
+  box-shadow: inset 0 1px 2px rgba(23, 50, 79, 0.04) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #71869d !important;
+  opacity: 1 !important;
+}
+option {
+  background: #ffffff !important;
+  color: #17324f !important;
+}
+
+/* Bright action buttons with readable labels */
+button, .scoring-buttons button, .extra-buttons button,
+.stream-link-form button, .scorer-actions button {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #1599e8, #0872c5) !important;
+  border: 1px solid #0872c5 !important;
+  box-shadow: 0 5px 13px rgba(8, 114, 197, 0.2) !important;
+}
+.scoring-buttons button:nth-child(4n + 1) {
+  background: linear-gradient(135deg, #ffd34f, #ffad18) !important;
+  color: #493000 !important;
+  border-color: #ed9c00 !important;
+}
+.scoring-buttons button:nth-child(4n + 2) {
+  background: linear-gradient(135deg, #52d879, #19a94f) !important;
+  color: #073d20 !important;
+  border-color: #159b4b !important;
+}
+.scoring-buttons button:nth-child(4n + 3) {
+  background: linear-gradient(135deg, #42d4e8, #0797bd) !important;
+  color: #063746 !important;
+  border-color: #087eaa !important;
+}
+.extra-buttons .wicket-button, .scorer-actions .reset-button {
+  background: linear-gradient(135deg, #ff7188, #e6385d) !important;
+  color: #ffffff !important;
+  border-color: #df3155 !important;
+}
+
+/* Status chips and notices */
+.admin-tag, .public-tag, .live-label, .nav-status {
+  color: #075b9d !important;
+  background: #dff2ff !important;
+  border: 1px solid #a9d8ff !important;
+}
+.match-message, .stream-link-message {
+  color: #155b32 !important;
+  background: #e8fff0 !important;
+  border: 1px solid #a6e7bb !important;
+}
+
+/* Keep broadcast/video areas functional and legible; don't recolour media */
+.video-container, .video-container video, .video-container iframe,
+.broadcast-overlay, .broadcast-overlay * {
+  /* Broadcast overlay intentionally retains its broadcast styling. */
+}
+
+@media (max-width: 650px) {
+  body { background: #f2f8ff !important; }
+  .scoring-workspace-grid { grid-template-columns: 1fr !important; }
+}
+
+/* =========================================================
+   HIGH-CONTRAST SCORER / PENALTY PANEL FIX
+   Appended only. No existing selectors or features removed.
+   ========================================================= */
+
+/* The scorer's nested cards/forms must not inherit the old navy panels. */
+.scorer-panel,
+.scorer-match-settings,
+.scorer-panel .scorer-match-settings,
+.scorer-panel [class*="penalty"],
+.scorer-panel [class*="Penalty"],
+.scorer-panel [class*="form-group"],
+.scorer-panel [class*="form-section"],
+.scorer-panel [class*="settings-card"],
+.scorer-panel [class*="control-card"] {
+  background: #ffffff !important;
+  color: #17324f !important;
+  border-color: #c5def4 !important;
+  box-shadow: 0 5px 18px rgba(31, 91, 145, 0.10) !important;
+}
+
+/* Force every form label and its helper text to a readable dark colour. */
+.scorer-panel label,
+.scorer-panel .scorer-match-settings label,
+.scorer-panel [class*="penalty"] label,
+.scorer-panel [class*="Penalty"] label,
+.scorer-panel [class*="form"] label,
+.scorer-panel p,
+.scorer-panel span,
+.scorer-panel small,
+.scorer-panel legend,
+.scorer-panel .control-title,
+.scorer-panel h2,
+.scorer-panel h3,
+.scorer-panel h4 {
+  color: #17324f !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Also cover penalty controls that sit outside .scorer-panel. */
+[class*="penalty"],
+[class*="Penalty"] {
+  color: #17324f;
+}
+[class*="penalty"] label,
+[class*="Penalty"] label,
+[class*="penalty"] p,
+[class*="Penalty"] p,
+[class*="penalty"] span,
+[class*="Penalty"] span,
+[class*="penalty"] small,
+[class*="Penalty"] small {
+  color: #17324f !important;
+  opacity: 1 !important;
+}
+[class*="penalty"]:not(input):not(select):not(textarea):not(button),
+[class*="Penalty"]:not(input):not(select):not(textarea):not(button) {
+  background-color: #ffffff !important;
+  border-color: #c5def4 !important;
+}
+
+/* Keep controls white with dark text, including native select menus. */
+.scorer-panel input,
+.scorer-panel select,
+.scorer-panel textarea,
+[class*="penalty"] input,
+[class*="penalty"] select,
+[class*="penalty"] textarea,
+[class*="Penalty"] input,
+[class*="Penalty"] select,
+[class*="Penalty"] textarea {
+  background: #ffffff !important;
+  color: #17324f !important;
+  border: 1px solid #9bbbd9 !important;
+  opacity: 1 !important;
+}
+
+.scorer-panel input::placeholder,
+.scorer-panel textarea::placeholder,
+[class*="penalty"] input::placeholder,
+[class*="penalty"] textarea::placeholder {
+  color: #607b96 !important;
+  opacity: 1 !important;
+}
+
+/* Ensure text on bright action buttons remains legible. */
+.scorer-panel button,
+[class*="penalty"] button,
+[class*="Penalty"] button {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   SCOREBOARD + BROADCAST OVERLAY CONTRAST REPAIR
+   Appended overrides only. All earlier CSS remains intact.
+   ========================================================= */
+
+/* Main on-page scorecard: bright surface with strong readable text. */
+.website .scoreboard {
+  background: linear-gradient(135deg, #ffffff 0%, #edf7ff 58%, #fff8e8 100%) !important;
+  color: #17324f !important;
+  border: 2px solid #b8daf5 !important;
+  box-shadow: 0 12px 30px rgba(28, 89, 145, 0.13) !important;
+}
+.website .scoreboard .score-top,
+.website .scoreboard .score-main,
+.website .scoreboard .score-stats,
+.website .scoreboard .score-columns,
+.website .scoreboard .last-balls {
+  color: #17324f !important;
+}
+.website .scoreboard .score-top h1,
+.website .scoreboard .score-top h2,
+.website .scoreboard .score-top h3,
+.website .scoreboard .score-top p,
+.website .scoreboard .score-main span,
+.website .scoreboard .score-columns h3,
+.website .scoreboard .score-columns p,
+.website .scoreboard .score-columns span,
+.website .scoreboard .score-columns small,
+.website .scoreboard .score-columns strong,
+.website .scoreboard .last-balls h3,
+.website .scoreboard .last-balls span {
+  color: #17324f !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.website .scoreboard .score-main strong {
+  color: #075b9d !important;
+  text-shadow: none !important;
+}
+.website .scoreboard .score-top p,
+.website .scoreboard .score-main span {
+  color: #526b86 !important;
+}
+
+/* Three statistic tiles (Run Rate, Extras, Overs Left). */
+.website .scoreboard .score-stats > div {
+  background: #ffffff !important;
+  color: #17324f !important;
+  border: 1px solid #c4def4 !important;
+  box-shadow: 0 5px 14px rgba(25, 91, 151, 0.09) !important;
+}
+.website .scoreboard .score-stats > div small {
+  color: #526b86 !important;
+  opacity: 1 !important;
+}
+.website .scoreboard .score-stats > div strong {
+  color: #0878c9 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.website .scoreboard .score-divider {
+  background: #c9def2 !important;
+}
+.website .scoreboard .score-live {
+  color: #ffffff !important;
+  background: #d92f55 !important;
+  border-color: #d92f55 !important;
+}
+
+/* Broadcast scoreboard in the video/preview: retain its stadium look,
+   but explicitly restore bright text after broad website text rules. */
+.website .broadcast-overlay,
+.website .broadcast-overlay * {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75) !important;
+}
+.website .broadcast-overlay-topline,
+.website .broadcast-overlay-main,
+.website .broadcast-overlay-bottom,
+.website .broadcast-overlay-empty {
+  color: #ffffff !important;
+}
+.website .broadcast-overlay-brand,
+.website .broadcast-overlay-team > span,
+.website .broadcast-overlay-team > strong em,
+.website .broadcast-overlay-batters strong,
+.website .broadcast-overlay-bowler strong {
+  color: #ffd08a !important;
+}
+.website .broadcast-overlay-live,
+.website .broadcast-overlay-team > strong,
+.website .broadcast-overlay-metrics strong,
+.website .broadcast-overlay-batters b,
+.website .broadcast-overlay-bowler b,
+.website .broadcast-overlay-recent i {
+  color: #ffffff !important;
+}
+.website .broadcast-overlay-team > small,
+.website .broadcast-overlay-metrics small,
+.website .broadcast-overlay-recent > small,
+.website .broadcast-overlay-batters small {
+  color: #d8e8f8 !important;
+}
+.website .broadcast-overlay-recent i.is-boundary {
+  color: #382000 !important;
+  text-shadow: none !important;
+}
+.website .broadcast-overlay-recent i.is-wicket {
+  color: #ffffff !important;
+}
+
+/* Keep text visible if the scorecard is rendered outside .website. */
+.scoreboard .score-stats > div {
+  background: #ffffff !important;
+  border-color: #c4def4 !important;
+}
+.scoreboard .score-stats > div small { color: #526b86 !important; }
+.scoreboard .score-stats > div strong { color: #0878c9 !important; }
+
+
+/* =========================================================
+   LIGHT SCORER PANELS + HIGH VISIBILITY LABELS
+   Final override layer. Appended only: all previous CSS retained.
+   ========================================================= */
+:root {
+  --scorer-panel-bg: #ffffff;
+  --scorer-panel-text: #183653;
+  --scorer-muted-text: #496782;
+  --scorer-panel-border: #b9d8f1;
+}
+
+/* Replace navy form/panel surfaces with clean white or pale blue. */
+.website .scorer-panel,
+.website .scorer-match-settings,
+.website .scorer-match-settings > div,
+.website .scorer-panel > div,
+.website .scoring-workspace-card,
+.website .scorer-card,
+.website .scorer-section,
+.website .scoring-section,
+.website .extra-section,
+.website .form-section,
+.website .form-group,
+.website .penalty-section,
+.website .wide-section,
+.website .noball-section,
+.scorer-panel,
+.scorer-match-settings,
+.scoring-workspace-card {
+  background: #ffffff !important;
+  color: #183653 !important;
+  border-color: #b9d8f1 !important;
+  box-shadow: 0 5px 18px rgba(30, 91, 145, 0.10) !important;
+}
+
+/* Form labels/headings were inheriting pale text on navy. Force contrast. */
+.website .scorer-panel label,
+.website .scorer-match-settings label,
+.website .scorer-panel .control-title,
+.website .scorer-match-settings .control-title,
+.website .scorer-panel h1,
+.website .scorer-panel h2,
+.website .scorer-panel h3,
+.website .scorer-panel h4,
+.website .scorer-match-settings h1,
+.website .scorer-match-settings h2,
+.website .scorer-match-settings h3,
+.website .scorer-match-settings h4,
+.website .scorer-panel p,
+.website .scorer-panel small,
+.website .scorer-panel span,
+.website .scorer-match-settings p,
+.website .scorer-match-settings small,
+.website .scorer-match-settings span,
+.scorer-panel label,
+.scorer-match-settings label {
+  color: #183653 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #183653 !important;
+}
+
+/* Common nested scorer cards and field wrappers: pale blue, not navy. */
+.website .scorer-panel [class*="card"],
+.website .scorer-panel [class*="group"],
+.website .scorer-panel [class*="section"],
+.website .scorer-match-settings [class*="card"],
+.website .scorer-match-settings [class*="group"],
+.website .scorer-match-settings [class*="section"],
+.scorer-panel [class*="card"],
+.scorer-panel [class*="group"],
+.scorer-panel [class*="section"] {
+  background-color: #f3f9ff !important;
+  color: #183653 !important;
+  border-color: #c8e0f5 !important;
+}
+
+/* Inputs and dropdowns stay white, with readable selected values. */
+.website .scorer-panel input,
+.website .scorer-panel select,
+.website .scorer-panel textarea,
+.website .scorer-match-settings input,
+.website .scorer-match-settings select,
+.website .scorer-match-settings textarea,
+.scorer-panel input,
+.scorer-panel select,
+.scorer-panel textarea {
+  background: #ffffff !important;
+  color: #183653 !important;
+  border: 1px solid #9dbbd5 !important;
+  -webkit-text-fill-color: #183653 !important;
+}
+.website .scorer-panel input::placeholder,
+.website .scorer-panel textarea::placeholder,
+.website .scorer-match-settings input::placeholder,
+.website .scorer-match-settings textarea::placeholder {
+  color: #647f98 !important;
+  opacity: 1 !important;
+}
+
+/* Action buttons retain vivid colour and white text. */
+.website .scorer-panel button,
+.website .scorer-match-settings button,
+.scorer-panel button {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Keep the main scorecard's light theme and broadcast overlay's deliberate
+   stadium treatment; these are not scorer form panels. */
+
+
+/* =========================================================
+   FINAL FIX: WIDE / NO-BALL / BYE / PENALTY FORM PANELS
+   Root cause: the dark backgrounds are on .player-management > div,
+   not on .penalty-section or .scorer-panel. Target the real JSX class.
+   Appended overrides only. Existing CSS and website features retained.
+   ========================================================= */
+.website .player-management,
+.website .player-management > div,
+.website .player-management > div > label,
+.website .player-management > div > div {
+  background: #f1f8ff !important;
+  color: #17324f !important;
+  border-color: #b9d8f1 !important;
+  box-shadow: 0 5px 16px rgba(30, 91, 145, 0.09) !important;
+}
+
+/* All form labels and their text inside the scoring controls. */
+.website .player-management label,
+.website .player-management label *,
+.website .player-management h1,
+.website .player-management h2,
+.website .player-management h3,
+.website .player-management h4,
+.website .player-management p,
+.website .player-management span,
+.website .player-management small,
+.website .player-management strong,
+.website .player-management legend {
+  color: #17324f !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #17324f !important;
+}
+
+/* Inputs and dropdowns remain white with dark readable values. */
+.website .player-management input,
+.website .player-management select,
+.website .player-management textarea {
+  background: #ffffff !important;
+  color: #17324f !important;
+  border: 1px solid #91b6d6 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #17324f !important;
+  box-shadow: inset 0 1px 2px rgba(20, 65, 105, 0.06) !important;
+}
+.website .player-management input::placeholder,
+.website .player-management textarea::placeholder {
+  color: #627d96 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #627d96 !important;
+}
+.website .player-management select option {
+  background: #ffffff !important;
+  color: #17324f !important;
+}
+
+/* Bright action buttons with high-contrast labels. */
+.website .player-management button {
+  background: linear-gradient(135deg, #159fe8, #0874c7) !important;
+  color: #ffffff !important;
+  border: 1px solid #0874c7 !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(8, 116, 199, 0.18) !important;
+}
+.website .player-management button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #087fce, #075da8) !important;
+}
+.website .player-management button:disabled {
+  opacity: 0.58 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Avoid accidental dark styling from any earlier generic panel rule. */
+.website .player-management > div *:not(button):not(input):not(select):not(textarea) {
+  text-shadow: none !important;
+}
+
+/* Staff entry stays separate from the public spectator experience. */
+.staff-login-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 8px 11px;
+  color: #ffad58;
+  border: 1px solid #6b4a2e;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.staff-login-link:hover {
+  color: #080f1d;
+  background: #ffad58;
+}
+
+@media (max-width: 560px) {
+  .nav-status {
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+
+  .staff-login-link {
+    margin-left: 2px;
+    padding: 7px 8px;
+    font-size: 9px;
+  }
+}
+
+/* Administrator staff-account management */
+.admin-account-manager {
+  margin: 28px 0;
+  padding: 22px;
+  background: rgba(12, 23, 40, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.admin-account-list {
+  margin-top: 24px;
+}
+
+.admin-account-list h4 {
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.admin-account-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-account-row span {
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
+.admin-account-row select {
+  min-width: 145px;
+}
+
+@media (max-width: 560px) {
+  .admin-account-manager {
+    padding: 14px;
+  }
+
+  .admin-account-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
